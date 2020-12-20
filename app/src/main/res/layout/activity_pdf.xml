@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PdfActivity">
+
+<!--    <LinearLayout-->
+<!--        android:orientation="vertical"-->
+<!--        android:id="@+id/pdfSummary"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:layout_above="@+id/shareAndEmailLayout"-->
+<!--        android:paddingHorizontal="16dp"-->
+<!--        android:layout_margin="2dp"-->
+<!--        android:paddingVertical="8dp"-->
+<!--        >-->
+<!--        -->
+<!--    </LinearLayout>-->
+
+    <LinearLayout
+        android:layout_width="160dp"
+        android:layout_height="320dp"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:onClick="viewPdf"
+        >
+
+        <ImageView
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:src="@drawable/ic_checked"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:padding="16dp"
+            android:textSize="16sp"
+            android:textColor="@color/myColorAccent"
+            android:fontFamily="@font/helveticace"
+            android:text="Click to view"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/shareAndEmailLayout"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:layout_alignParentBottom="true"
+        android:paddingVertical="10dp"
+        android:paddingHorizontal="16dp"
+        android:background="@color/myColorPrimary"
+        >
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/shareBtn"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/create_invoice_button"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:text="Share"
+            android:textAllCaps="false"
+            android:fontFamily="@font/helvetica"
+            android:textColor="@color/myColorPrimary"
+            android:textSize="16sp"
+            android:layout_marginEnd="8dp"
+            android:paddingLeft="18dp"
+            android:drawableStart="@drawable/ic_baseline_share_24"
+            android:onClick="share"
+            />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/eMailBtn"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/create_invoice_button"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:text="Email"
+            android:textAllCaps="false"
+            android:fontFamily="@font/helvetica"
+            android:textColor="@color/myColorPrimary"
+            android:textSize="16sp"
+            android:layout_marginStart="8dp"
+            android:paddingLeft="18dp"
+            android:drawableStart="@drawable/ic_baseline_email_24"
+            android:onClick="email"
+            />
+
+    </LinearLayout>
+
+</RelativeLayout>

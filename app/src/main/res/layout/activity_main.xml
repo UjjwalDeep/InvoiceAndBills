@@ -1,0 +1,580 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:background="@color/myColorPrimaryDark">
+
+<androidx.appcompat.widget.Toolbar
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:background="@color/myColorPrimary"
+    app:titleTextColor="#000"
+    android:gravity="center"
+    app:contentInsetStart="0dp"
+    app:layout_scrollFlags="enterAlways"
+    style="@style/Widget.MaterialComponents.AppBarLayout.Primary"
+    >
+
+    <TextView
+        android:backgroundTint="@color/myColorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity = "center"
+        android:gravity="center"
+        android:elevation="0dp"
+        android:text="Create Invoice"
+        android:textAlignment="center"
+
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/helveticace"
+        android:textColor="#000"
+        />
+</androidx.appcompat.widget.Toolbar>
+
+
+
+
+<RelativeLayout
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+    <androidx.core.widget.NestedScrollView
+        android:layout_above="@id/createInvoiceLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:id="@+id/scrollView">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+    <androidx.cardview.widget.CardView
+        android:id="@+id/clientCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+       app:contentPaddingBottom="8dp"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/myColorPrimary">
+        <TextView
+            android:id="@+id/clientDetailsText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Client Details"
+            android:textAllCaps="true"
+            android:layout_margin="16dp"
+            android:textSize="18sp"
+            android:fontFamily="@font/helvetica"
+            android:textStyle="bold"
+            android:textColor="@color/myColorAccent"
+            />
+
+            <TextView
+                android:id="@+id/clientDetailsData"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/clientDetailsText"
+                android:hint="Click to add details"
+                android:layout_marginVertical="8dp"
+                android:layout_marginHorizontal="16dp"
+                android:textSize="18sp"
+                android:fontFamily="@font/helveticace"
+                android:textColor="#000"
+                />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/invoiceCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/myColorPrimary">
+                <TextView
+                    android:id="@+id/invoiceDetailsText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="INVOICE DETAILS"
+                    android:layout_margin="16dp"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/helvetica"
+                    android:textStyle="bold"
+                    android:textColor="@color/myColorAccent"
+                    />
+                <LinearLayout
+                    android:id="@+id/invoiceLineLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_below="@id/invoiceDetailsText">
+                <TextView
+                    android:id="@+id/invoiceNoText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Invoice No."
+                    android:layout_marginVertical="8dp"
+                    android:layout_marginHorizontal="16dp"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/helveticace"
+                    android:textColor="@color/colorText"
+                    android:layout_weight="1"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/invoiceDetailsText"
+                    android:text="Due Date"
+                    android:layout_marginVertical="8dp"
+                    android:layout_marginHorizontal="16dp"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/helveticace"
+                    android:textColor="@color/colorText"
+                    android:layout_weight="1"
+                    />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_below="@id/invoiceLineLayout">
+
+                    <EditText
+                        android:id="@+id/invoiceNoEtText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:layout_weight="1"
+                        android:layout_marginVertical="8dp"
+                        android:layout_marginHorizontal="16dp"
+                        android:textSize="18sp"
+
+                        />
+                    <EditText
+                        android:id="@+id/dueDateDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginVertical="8dp"
+                        android:layout_marginHorizontal="16dp"
+                        android:textSize="18sp"
+                        android:editable="false"
+                        android:focusable="false"
+                        android:clickable="true"
+
+                        />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/invoiceItemCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                >
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/myColorPrimary">
+                    <TextView
+                        android:id="@+id/invoiceItemsText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="INVOICE ITEMS"
+                        android:layout_margin="16dp"
+                        android:textSize="18sp"
+                        android:fontFamily="@font/helvetica"
+                        android:textStyle="bold"
+                        android:textColor="@color/myColorAccent"
+                        />
+
+                    <TextView
+                        android:id="@+id/noItemsText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="You have 0 items"
+                        android:layout_marginVertical="8dp"
+                        android:layout_marginHorizontal="16dp"
+                        android:textSize="18sp"
+                        android:fontFamily="@font/helveticace"
+                        android:textColor="@color/colorText"
+                        android:layout_below="@id/invoiceItemsText"
+                        />
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/itemListLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="16dp"
+                        android:nestedScrollingEnabled="false"
+                        android:layout_below="@+id/noItemsText">
+
+                    </androidx.recyclerview.widget.RecyclerView>
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/addItemBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="52dp"
+                        android:layout_below="@id/itemListLayout"
+                        android:background="@drawable/add_item_btn"
+                        android:text="Add Item"
+                        android:layout_marginVertical="8dp"
+                        android:layout_marginHorizontal="16dp"
+                        android:padding="16dp"
+                        android:textSize="16sp"
+                        android:gravity="center"
+                        android:fontFamily="@font/helvetica"
+                        android:textColor="@color/myColorAccent"
+                        />
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:id="@+id/subtotalLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="16dp"
+                            android:layout_marginTop="32dp"
+                            android:layout_marginBottom="16dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/helveticace"
+                            android:text="Sub Total"
+                            android:textColor="@color/colorText"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/subtotalInput"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginTop="32dp"
+                            android:layout_marginBottom="16dp"
+                            android:layout_marginHorizontal="24dp"
+                            android:hint="₹ 0.00"
+                            android:textSize="18sp"
+                            android:textAlignment="viewEnd"
+                            android:fontFamily="@font/helveticace"/>
+
+                    </LinearLayout>
+                    <View
+                        android:id="@+id/viewOne"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:background="#eee"
+                        android:layout_below="@id/subtotalLayout"
+                        />
+                    <LinearLayout
+                        android:id="@+id/sgstLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_below="@+id/viewOne">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginVertical="16dp"
+                            android:layout_marginHorizontal="16dp"
+                            android:text="SGST"
+                            android:textSize="18sp"
+                            android:textColor="@color/colorText"
+                            android:fontFamily="@font/helveticace"/>
+                        <TextView
+                            android:id="@+id/totalSgstInput"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginVertical="16dp"
+                            android:layout_marginHorizontal="24dp"
+                            android:hint="₹ 0.00"
+                            android:textSize="18sp"
+                            android:textAlignment="viewEnd"
+                            android:fontFamily="@font/helveticace"/>
+
+                    </LinearLayout>
+                    <View
+                        android:id="@+id/viewTwo"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:background="#eee"
+                        android:layout_below="@id/sgstLayout"
+                        />
+                    <LinearLayout
+                        android:id="@+id/cgstLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_below="@+id/viewTwo">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginVertical="16dp"
+                            android:layout_marginHorizontal="16dp"
+                            android:text="CGST"
+                            android:textSize="18sp"
+                            android:textColor="@color/colorText"
+                            android:fontFamily="@font/helveticace"/>
+                        <TextView
+                            android:id="@+id/totalCgstInput"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginVertical="16dp"
+                            android:layout_marginHorizontal="24dp"
+                            android:hint="₹ 0.00"
+                            android:textSize="18sp"
+                            android:textAlignment="viewEnd"
+                            android:fontFamily="@font/helveticace"/>
+
+                    </LinearLayout>
+                    <View
+                        android:id="@+id/viewThree"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:background="#eee"
+                        android:layout_below="@id/cgstLayout"
+                        />
+                    <LinearLayout
+                        android:id="@+id/cessLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_below="@+id/viewThree">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginVertical="16dp"
+                            android:layout_marginHorizontal="16dp"
+                            android:text="Cess"
+                            android:textSize="18sp"
+                            android:textColor="@color/colorText"
+                            android:fontFamily="@font/helveticace"/>
+                        <TextView
+                            android:id="@+id/totalCessInput"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginVertical="16dp"
+                            android:layout_marginHorizontal="24dp"
+                            android:hint="₹ 0.00"
+                            android:textSize="18sp"
+                            android:textAlignment="viewEnd"
+                            android:fontFamily="@font/helveticace"/>
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_below="@+id/cessLayout">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginVertical="16dp"
+                            android:layout_marginHorizontal="16dp"
+                            android:text="Grand Total"
+                            android:textSize="18sp"
+                            android:textColor="@color/myColorAccent"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/helveticace"/>
+                        <TextView
+                            android:id="@+id/grandTotalInput"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginVertical="16dp"
+                            android:layout_marginHorizontal="24dp"
+                            android:hint="₹ 0.00"
+                            android:textColorHint="@color/myColorAccent"
+                            android:textStyle="bold"
+                            android:textSize="24sp"
+                            android:textColor="@color/myColorAccent"
+                            android:textAlignment="viewEnd"
+                            android:fontFamily="@font/helveticace"/>
+
+                    </LinearLayout>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/detailsCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                >
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/myColorPrimary">
+                    <TextView
+                        android:id="@+id/otherDetailsText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="OTHER DETAILS"
+                        android:layout_margin="16dp"
+                        android:textSize="18sp"
+                        android:fontFamily="@font/helvetica"
+                        android:textStyle="bold"
+                        android:textColor="@color/myColorAccent"
+                        />
+                    <LinearLayout
+                        android:id="@+id/detailsLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_below="@id/otherDetailsText">
+                        <TextView
+                            android:id="@+id/notesText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Notes"
+                            android:layout_marginVertical="8dp"
+                            android:layout_marginHorizontal="16dp"
+                            android:textSize="18sp"
+                            android:fontFamily="@font/helveticace"
+                            android:textColor="@color/colorText"
+                            android:layout_weight="1"
+                            />
+                       <EditText
+                           android:id="@+id/notesEt"
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:layout_marginVertical="8dp"
+                           android:layout_marginHorizontal="16dp"
+                           android:textSize="18sp"
+
+                           />
+                        <TextView
+                            android:id="@+id/termsText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Terms and Conditions"
+                            android:layout_marginVertical="8dp"
+                            android:layout_marginHorizontal="16dp"
+                            android:textSize="18sp"
+                            android:fontFamily="@font/helveticace"
+                            android:textColor="@color/colorText"
+                            android:layout_weight="1"
+                            />
+                        <EditText
+                            android:id="@+id/termsEt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginVertical="8dp"
+                            android:layout_marginHorizontal="16dp"
+                            android:textSize="18sp"
+
+                            />
+                    </LinearLayout>
+
+
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/companyCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:contentPaddingBottom="8dp"
+                >
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/myColorPrimary">
+                    <TextView
+                        android:id="@+id/companyDetailsTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Your Company Details"
+                        android:textAllCaps="true"
+                        android:layout_margin="16dp"
+                        android:textSize="18sp"
+                        android:fontFamily="@font/helvetica"
+                        android:textStyle="bold"
+                        android:textColor="@color/myColorAccent"
+                        />
+
+                    <TextView
+                        android:id="@+id/companyDetailsText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/companyDetailsTitle"
+                        android:hint="Click to add details"
+                        android:layout_marginVertical="8dp"
+                        android:layout_marginHorizontal="16dp"
+                        android:textSize="18sp"
+                        android:fontFamily="@font/helveticace"
+                        android:textColor="#000"
+                        />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+    <LinearLayout
+
+        android:id="@+id/createInvoiceLayout"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:layout_alignParentBottom="true"
+        android:paddingVertical="10dp"
+        android:paddingHorizontal="16dp"
+        android:background="@color/myColorPrimary">
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/createPdf"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/create_invoice_button"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:text="Create Invoice"
+            android:textAllCaps="false"
+            android:fontFamily="@font/helvetica"
+            android:textColor="@color/myColorPrimary"
+            android:textSize="16sp"
+            />
+       <ImageButton
+           android:id="@+id/clearAll"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_weight="2"
+           android:layout_marginStart="16dp"
+           android:src="@drawable/clear_vec"
+           android:background="@color/myColorPrimary"
+           />
+    </LinearLayout>
+</RelativeLayout>
+</LinearLayout>

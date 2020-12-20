@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+
+    android:background="@color/myColorPrimary"
+    app:titleTextColor="#000"
+    android:gravity="center"
+     app:contentInsetStart="0dp"
+    app:layout_scrollFlags="enterAlways"
+    app:popupTheme="@style/Widget.MaterialComponents.AppBarLayout.Primary"
+    >
+    <TextView
+        android:backgroundTint="@color/myColorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity = "center"
+        android:gravity="center"
+        android:elevation="0dp"
+        android:text="Create Invoice"
+        android:textAlignment="center"
+
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/helveticace"
+        android:textColor="#000"
+        />
+
+</androidx.appcompat.widget.Toolbar>
+    <!--        style="@style/Widget.MaterialComponents.AppBarLayout.Primary"-->

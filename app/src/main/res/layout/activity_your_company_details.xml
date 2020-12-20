@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/myColorPrimaryDark"
+    tools:context=".YourCompanyDetailsActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        >
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/myColorPrimary"
+            app:titleTextColor="#000"
+            app:contentInsetStart="0dp"
+            app:layout_scrollFlags="enterAlways"
+            app:popupTheme="@style/Widget.MaterialComponents.AppBarLayout.Primary"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+                <ImageView
+                    android:id="@+id/backImgBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:src="@drawable/back_btn_vec"
+
+                    />
+                <TextView
+                    android:outlineProvider="none"
+
+                    android:gravity="center"
+                    android:backgroundTint="@color/myColorPrimary"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity = "center"
+                    android:layout_weight="1"
+                    android:elevation="0dp"
+                    android:text="Your Company Details"
+                    android:textAlignment="center"
+                    style="@style/Widget.MaterialComponents.AppBarLayout.Primary"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/helveticace"
+                    android:textColor="#000"
+                    />
+                <ImageView
+                    android:id="@+id/yourSaveBtnImg"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:src="@drawable/save_vec"
+                    />
+            </LinearLayout>
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+    <ScrollView
+        android:layout_below="@+id/appBar"
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Company Name"
+                        android:layout_margin="16dp"
+                        android:textSize="18sp"
+                        android:fontFamily="@font/helvetica"
+                        android:textColor="@color/myColorAccent"/>
+                    <EditText
+                        android:id="@+id/yourCompanyName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="16dp"
+                        />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="GSTIN"
+                        android:layout_margin="16dp"
+                        android:textSize="18sp"
+                        android:fontFamily="@font/helvetica"
+                        android:textColor="@color/myColorAccent"/>
+                    <EditText
+                        android:id="@+id/yourGstin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="16dp"
+                        />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Date Format"
+                        android:layout_margin="16dp"
+                        android:textSize="18sp"
+                        android:fontFamily="@font/helvetica"
+                        android:textColor="@color/myColorAccent"/>
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="16dp"
+                        android:editable="false"
+                        />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Your Name"
+                        android:layout_margin="16dp"
+                        android:textSize="18sp"
+                        android:fontFamily="@font/helvetica"
+                        android:textColor="@color/myColorAccent"/>
+                    <EditText
+                        android:id="@+id/yourName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="16dp"
+                        />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Company Address"
+                        android:layout_margin="16dp"
+                        android:textSize="18sp"
+                        android:fontFamily="@font/helvetica"
+                        android:textColor="@color/myColorAccent"/>
+                    <EditText
+                        android:id="@+id/yourCompanyAddress"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="16dp"
+                        />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                app:contentPaddingBottom="16dp"
+                app:contentPaddingTop="16dp"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <EditText
+                            android:id="@+id/yourCity"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="18sp"
+                            android:layout_marginHorizontal="16dp"
+                            android:textColor="@color/myColorAccent"
+                            android:hint="City"
+                            />
+                        <EditText
+                            android:id="@+id/yourState"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="fill_parent"
+                            android:layout_marginHorizontal="16dp"
+                            android:textSize="18sp"
+                            android:hint="Choose State"
+                            />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/yourCountry"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="18sp"
+                            android:layout_marginHorizontal="16dp"
+                            android:hint="Country"
+                            />
+                        <EditText
+                            android:id="@+id/yourZipCode"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="18sp"
+                            android:layout_marginHorizontal="16dp"
+                            android:hint="Zip Code"
+                            android:inputType="number"
+                            />
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
+    <!--    <LinearLayout-->
+
+    <!--        android:id="@+id/createInvoiceLayout"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="72dp"-->
+    <!--        android:layout_alignParentBottom="true"-->
+    <!--        android:paddingVertical="10dp"-->
+    <!--        android:paddingHorizontal="16dp"-->
+    <!--        android:background="@color/myColorPrimary">-->
+    <!--        <androidx.appcompat.widget.AppCompatButton-->
+    <!--            android:id="@+id/createPdf"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="match_parent"-->
+    <!--            android:background="@drawable/create_invoice_button"-->
+    <!--            android:textAlignment="center"-->
+    <!--            android:gravity="center"-->
+    <!--            android:layout_weight="1"-->
+    <!--            android:text="Save"-->
+    <!--            android:textAllCaps="false"-->
+    <!--            android:fontFamily="@font/helvetica"-->
+    <!--            android:textColor="@color/myColorPrimary"-->
+    <!--            android:textSize="16sp"-->
+    <!--            />-->
+    <!--        <ImageButton-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_weight="2"-->
+    <!--            android:layout_marginStart="16dp"-->
+    <!--            android:src="@drawable/clear_vec"-->
+    <!--            android:background="@color/myColorPrimary"-->
+    <!--            />-->
+    <!--    </LinearLayout>-->
+</RelativeLayout>

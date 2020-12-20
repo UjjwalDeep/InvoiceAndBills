@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:title="Credits"
+    app:showAsAction="never"
+    android:id="@+id/credits"
+    />
+
+    <item android:title="Rate in play store"
+    app:showAsAction="never"
+    android:id="@+id/rate"
+    />
+
+    <item android:title="Remove ads"
+    app:showAsAction="never"
+    android:id="@+id/ads"
+    />
+
+    <item android:title="Version"
+    app:showAsAction="never"
+    android:id="@+id/version"
+    />
+
+</menu>
