@@ -344,12 +344,30 @@ public class PdfActivity extends AppCompatActivity {
     }
 
     public void share(View view) {
-        Uri uri = Uri.fromFile(shareFile);
-        Intent share = new Intent();
-        share.setAction(Intent.ACTION_SEND);
-        share.setType("application/pdf");
-        share.putExtra(Intent.EXTRA_STREAM,uri);
-        startActivity(Intent.createChooser(share , "Share via"));
+        try {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                Uri uri = FileProvider.getUriForFile(this, getPackageName() + ".provider", shareFile);
+                Intent share = new Intent();
+                share.setAction(Intent.ACTION_SEND);
+                share.setType("application/pdf");
+                share.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+                share.putExtra(Intent.EXTRA_STREAM, uri);
+                startActivity(Intent.createChooser(share , "Share via"));
+            }else {
+
+                Uri uri = Uri.fromFile(shareFile);
+                Intent share = new Intent();
+                share.setAction(Intent.ACTION_SEND);
+                share.setType("application/pdf");
+                share.putExtra(Intent.EXTRA_STREAM,uri);
+                startActivity(Intent.createChooser(share , "Share via"));
+
+            }
+
+            }catch (Exception e){
+                e.printStackTrace();
+                Toast.makeText(this, "Something went wrong", Toast.LENGTH_SHORT).show();
+            }
     }
 
     public void email(View view) {
