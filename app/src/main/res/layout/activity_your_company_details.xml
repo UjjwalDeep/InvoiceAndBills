@@ -110,20 +110,20 @@
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="16dp"
                         />
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Date Format"
-                        android:layout_margin="16dp"
-                        android:textSize="18sp"
-                        android:fontFamily="@font/helvetica"
-                        android:textColor="@color/myColorAccent"/>
-                    <EditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="16dp"
-                        android:editable="false"
-                        />
+<!--                    <TextView-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="Date Format"-->
+<!--                        android:layout_margin="16dp"-->
+<!--                        android:textSize="18sp"-->
+<!--                        android:fontFamily="@font/helvetica"-->
+<!--                        android:textColor="@color/myColorAccent"/>-->
+<!--                    <EditText-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginHorizontal="16dp"-->
+<!--                        android:editable="false"-->
+<!--                        />-->
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
