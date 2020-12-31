@@ -34,6 +34,9 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
 import com.ujjwaldeep.invoicebills.Database.MyClass;
 import com.ujjwaldeep.invoicebills.Database.MyDbHandler;
 import com.ujjwaldeep.invoicebills.RecyclerView.ItemsAdapter;
@@ -63,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
    private ImageButton cross;
    private TextView itemCountText;
    private Toolbar toolbar;
+   private InterstitialAd interstitialAd;
 
 
     @Override
@@ -78,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
         //createPdf();
         sharePrefClient();
         sharePrefCompany();
-
+        setAd();
 
 
         final Calendar calendar = Calendar.getInstance();
@@ -129,11 +133,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(checkDetails()) {
+                    if(interstitialAd.isLoaded()){
+                        interstitialAd.show();
+                    }else {
                     Intent intent = new Intent(MainActivity.this, PdfActivity.class);
                     intent.putExtra("array", new String[]{invoiceNoEt.getText().toString(), dueDate.getText().toString(),
                             notesEt.getText().toString(), termsEt.getText().toString()
                     });
                     startActivity(intent);
+                        interstitialAd.loadAd(new AdRequest.Builder().build());
+                    }
                 }
             }
         });
@@ -169,6 +178,24 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void setAd() {
+        interstitialAd = new InterstitialAd(this);
+        interstitialAd.setAdUnitId(getString(R.string.ad_unit_id));
+        interstitialAd.loadAd(new AdRequest.Builder().build());
+        interstitialAd.setAdListener(new AdListener() {
+            @Override
+            public void onAdClosed() {
+                // Code to be executed when the interstitial ad is closed.
+                Intent intent = new Intent(MainActivity.this, PdfActivity.class);
+                intent.putExtra("array", new String[]{invoiceNoEt.getText().toString(), dueDate.getText().toString(),
+                        notesEt.getText().toString(), termsEt.getText().toString()
+                });
+                startActivity(intent);
+                interstitialAd.loadAd(new AdRequest.Builder().build());
+            }
+        });
     }
 
     @Override

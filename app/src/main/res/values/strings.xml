@@ -5,6 +5,14 @@
         <a href="https://github.com/UjjwalDeep">Ujjwal Deep</a>
     </string>
 
+    <string name="ad_unit_id">                 <!-- for use in java file -->
+        ca-app-pub-3940256099942544/1033173712
+    </string>
+
+    <string name="admob_app_id">               <!-- for use in manifest file -->
+        ca-app-pub-3940256099942544~3347511713
+    </string>
+
     <string-array name="india_states">
         <item>Andaman and Nicobar Islands</item>
         <item>Andhra Pradesh</item>

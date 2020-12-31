@@ -10,10 +10,14 @@
         android:icon="@mipmap/invoice_logo"
         android:label="@string/app_name"
         android:requestLegacyExternalStorage="true"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/invoice_logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MenuItems.CreditsActivity"/>
+        <!-- Sample AdMob app ID: ca-app-pub-3940256099942544~3347511713 -->
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="@string/admob_app_id"/>
 
         <provider
             android:name="androidx.core.content.FileProvider"
